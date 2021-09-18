@@ -1,0 +1,56 @@
+/* Custom Variables Start */
+:root {
+  --primary-clr: #2145bd;
+  --secondary-clr: #dad264;
+
+  --box-shadow-sm: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  --box-shadow-sm: 0px 0px 10px rgba(0, 0, 0, 0.35);
+  --box-shadow-sm: 0px 0px 15px rgba(0, 0, 0, 0.45);
+}
+/* Custom Variables End */
+
+/* General Styles Start */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #e1e1e1;
+}
+
+/* General Styles End */
+
+/* Typography Start */
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+}
+/* Typography End */
+
+/* Utility Classes Start */
+.section-padding {
+  padding: 6rem 0;
+}
+
+.margin-bottom-sm {
+  margin-bottom: 1rem;
+}
+
+.margin-bottom-md {
+  margin-bottom: 2.5rem;
+}
+
+.margin-bottom-lg {
+  margin-bottom: 3rem;
+}
+/* Utility Classes End */
