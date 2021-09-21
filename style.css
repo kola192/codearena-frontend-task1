@@ -59,7 +59,12 @@ h4 {
 
 #inp{
   text-align: center;
+ 
 }
 
+span button{
+  background-color: #2145bd;
+  color: #e1e1e1;
+}
 
 /* input style end */
