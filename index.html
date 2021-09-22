@@ -4,17 +4,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do App</title>
     <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
+
 </head>
 <body>
     <h1 class="main-title">Code Arena To Do App</h1>
 
     <!-- Input Form Start -->
-
+    <div id="inp">
+        <input type="text" id="todoInput">
+        <span><button onclick="todoList()">Submit</button></span>
+    </div>
     <!-- Input Form End -->
 
 
     <!-- To Do List Start -->
     
+    <ol id="todoList">
+
+        <li>the first line   <button class="del">Delete </button> <button class="cop">Copy</button></li>
+        
+        
+        </ol>
+
     <!-- To Do List End -->
 
 </body>
