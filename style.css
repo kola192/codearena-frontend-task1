@@ -93,6 +93,18 @@ body {
   border-radius: 4px;
 }
 
+.complete {
+  float: right;
+  background-color: var(--success-clr);
+  cursor: pointer;
+  padding: 3px 10px;
+  color: var(--white);
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
 .task-box.finished {
   text-decoration: line-through;
 }
@@ -118,4 +130,8 @@ body {
 
 .tasks-completed span {
   background-color: var(--success-clr);
+}
+
+.tasks-content ol > li{
+  padding: 10px;
 }
