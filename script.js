@@ -1,53 +1,114 @@
-//The Javascript part of the app goes here
+//Grap Elements 
+let add = document.getElementById("plus");
+let tasksCount = document.querySelector(".tasks-count span");  
+let compCount = document.querySelector(".tasks-completed");	
+let input = document.getElementById("input");
+let tasksContainer = document.querySelector('.tasks-content');
+let tasksCompleted = document.querySelector('.tasks-completed span');
 
+//Focus on input field
+window.onload = function() {
+	input.focus();
+}
 
+//Handle Adding Task 
+add.addEventListener("click", function(){
 
-
-
-var add = document.getElementById("plus");
-var taskCount = document.querySelector(".tasks-count").children[0].innerHTML;
-var compCount = document.querySelector(".tasks-completed").children[0].innerHTML;	
 	
+	if(input.value == ""){
+		alert("Please add a task first!")
+	} else {
 
-	 add.addEventListener("click", function(){
- 		
-		var input = document.getElementById("tes").value;
-		if(input == ""){
-			alert("Please do a task!")
-		}else{
-		var ul = document.getElementById("ol");
-		var li = document.createElement("li");
-		var del = document.createElement("span");
-		var comp = document.createElement("span");
-			     
-		    
-		    del.classList.add("delete");
-			del.innerHTML="X";
+		let noTasksMsg = document.querySelector('.no-task-message');
 
-			comp.classList.add("complete");
-			comp.innerHTML="Completed";
+		if (document.body.contains(document.querySelector('.no-task-message'))) {
 
-			li.innerHTML = input ;
-			li.appendChild(comp); 
-		    li.appendChild(del); 
-		    ul.appendChild(li);
-		    document.getElementById("tes").value= "";
-	 		 document.querySelector(".tasks-count").children[0].innerHTML = ++taskCount;
-	 		}
+			noTasksMsg.remove();
+
+		}
+
+		let taskSpan = document.createElement('span');
+		let comp = document.createElement("span");
+		let del = document.createElement("span");
+				
+		taskSpan.classList.add('task-box');
+		
+		comp.classList.add("complete");
+		comp.style.color="white";
+		comp.innerText="Completed";
+		
+		del.classList.add("delete");
+		del.style.color="white";
+		del.innerText="X";
+
+		taskSpan.innerText = input.value ;
+		taskSpan.appendChild(del); 
+		taskSpan.appendChild(comp); 
+		tasksContainer.appendChild(taskSpan);
+		input.value= "";
+		input.focus();
+		calcTasks();
+	}
 
 
-	 		del.addEventListener("click", function(){
-	 			var confir = confirm("Want to delete this task?")
-	 			if(confir){
-	 			ul.removeChild(li);
-	 			 document.querySelector(".tasks-count").children[0].innerHTML = --taskCount;
-	 				}
-	 		});
+});
 
-	 		comp.addEventListener("click", function(){
-	 			li.removeChild(comp);
-	 			 document.querySelector(".tasks-completed").children[0].innerHTML = ++compCount
-	 		})
+document.addEventListener('click', function(e) {
 
-	 });
+	if (e.target.className === 'delete') {
+
+		e.target.parentNode.remove();
+
+		if (tasksContainer.childElementCount == 0) {
+
+			createNoTasks();
+
+		}
+
+	}
+
+	if (e.target.classList.contains('complete')) {
+
+		e.target.parentNode.classList.toggle('finished');
+
+	}
+
+	calcTasks();
+
+});
+
+
+//No task message creation function
+function createNoTasks() {
+
+	let msgSpan = document.createElement('span'),
+
+		msgText = document.createTextNode('No Task To Do');
+
+	msgSpan.appendChild(msgText);
+	
+	msgSpan.className = 'no-task-message';
+
+	tasksContainer.appendChild(msgSpan);	
+
+}
+
+//Calculate tasks function
+function calcTasks() {
+
+	tasksCount.innerHTML = document.querySelectorAll('.tasks-content .task-box').length;
+
+	tasksCompleted.innerHTML = document.querySelectorAll('.tasks-content .finished').length;
+
+}
+
+// Use Enter key
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+
+    add.click();
+  }
+});
+
 
