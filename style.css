@@ -19,9 +19,15 @@ body {
 
 .todo-container {
   width: 600px;
-  margin: 30px auto 0;
+  margin: 60px auto 0;
   background-color: #fff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 640px) {
+  .todo-container {
+    width: 90%;
+  }
 }
 
 .add-tasks {

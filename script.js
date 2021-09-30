@@ -83,7 +83,7 @@ function createNoTasks() {
 
 	let msgSpan = document.createElement('span'),
 
-		msgText = document.createTextNode('No Task To Do');
+	msgText = document.createTextNode('No Task To Do');
 
 	msgSpan.appendChild(msgText);
 	
@@ -102,7 +102,7 @@ function calcTasks() {
 
 }
 
-// Use Enter key
+// Use Enter key to submit task
 input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
     event.preventDefault();
