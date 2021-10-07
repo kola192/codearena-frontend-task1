@@ -35,7 +35,7 @@ add.addEventListener("click", function(){
 		
 		comp.classList.add("complete");
 		comp.style.color="white";
-		comp.innerText="Completed";
+		comp.innerText="Done";
 		
 		del.classList.add("delete");
 		del.style.color="white";
@@ -44,7 +44,7 @@ add.addEventListener("click", function(){
 		taskSpan.innerText = input.value ;
 		taskSpan.appendChild(del); 
 		taskSpan.appendChild(comp); 
-		tasksContainer.appendChild(taskSpan);
+		tasksContainer.prepend(taskSpan);
 		input.value= "";
 		input.focus();
 		calcTasks();
