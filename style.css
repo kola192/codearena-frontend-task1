@@ -13,7 +13,7 @@
 body {
   font-family: "poppins", arial, helvatica, tahoma, sans serif;
   margin: 0;
-  padding: 0;
+  padding-bottom: 4rem;
   background: linear-gradient(to right bottom, #0d1d3a 0, #1a2f55 52%, #365a83)
     no-repeat fixed;
 }

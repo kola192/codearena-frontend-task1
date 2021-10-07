@@ -108,7 +108,7 @@ input.addEventListener("keyup", function(event) {
     event.preventDefault();
 
     add.click();
-  }
+  } 
 });
 
 
